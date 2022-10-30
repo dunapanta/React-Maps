@@ -1,10 +1,12 @@
 import React from "react";
 import { PlacesProvider } from "./context";
+import { HomePage } from "./pages/HomePage";
+import "./styles.css";
 
 export const MapsApp = () => {
   return (
     <PlacesProvider>
-      <h1>Hola</h1>
+      <HomePage />
     </PlacesProvider>
   );
 };
