@@ -1,10 +1,11 @@
 import React, { useContext, useLayoutEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
-import { PlacesContext } from "../context";
+import { MapContext, PlacesContext } from "../context";
 import { Loading } from "./Loading";
 
 export const MapView = () => {
   const { isLoading, userLocation } = useContext(PlacesContext);
+  const { setMap } = useContext(MapContext);
   const mapDiv = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -16,6 +17,7 @@ export const MapView = () => {
         zoom: 9, // starting zoom
         projection: { name: "globe" }, // display the map as a 3D globe
       });
+      setMap(map);
     }
   }, [isLoading]);
 
