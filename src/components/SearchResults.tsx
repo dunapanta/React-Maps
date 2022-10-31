@@ -3,8 +3,10 @@ import { PlacesContext } from "../context";
 
 export const SearchResults = () => {
   const { places, isLoadingPlaces } = useContext(PlacesContext);
-  
+
   if (isLoadingPlaces) return <div className="search-results">Cargando...</div>;
+
+  if (places.length === 0) return <></>;
 
   return (
     <ul className="list-group mt-3">
