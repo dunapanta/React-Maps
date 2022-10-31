@@ -20,3 +20,6 @@
   border-radius: 5px;
 }
 
+.pointer {
+  cursor: pointer;
+}
