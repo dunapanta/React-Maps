@@ -35,7 +35,7 @@ export const PlacesProvider = ({ children }: { children: ReactNode }) => {
 
     dispatch({ type: "setLoadingPlaces" });
 
-    const resp = await searchApi<PlacesResponse>(`${query}.json`, {
+    const resp = await searchApi<PlacesResponse>(`/${query}.json`, {
       params: {
         proximity: state.userLocation.join(","),
       },
