@@ -58,8 +58,13 @@ export const MapProvider = ({ children }: { children: React.ReactNode }) => {
     });
   };
 
+  const getRouteBetweenPoints = async (
+    start: [number, number],
+    end: [number, number]
+  ) => {};
+
   return (
-    <MapContext.Provider value={{ ...state, setMap }}>
+    <MapContext.Provider value={{ ...state, setMap, getRouteBetweenPoints }}>
       {children}
     </MapContext.Provider>
   );
